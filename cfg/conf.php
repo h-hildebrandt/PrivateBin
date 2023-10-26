@@ -1,4 +1,4 @@
-<?php http_response_code(403); /*
+;<?php http_response_code(403); /*
 ; config file for PrivateBin
 ;
 ; An explanation of each setting can be find online at https://github.com/PrivateBin/PrivateBin/wiki/Configuration.
@@ -37,7 +37,7 @@ defaultformatter = "plaintext"
 ; size limit per paste or comment in bytes, defaults to 10 Mebibytes
 sizelimit = 10485760
 
-template to include, default is "bootstrap" (tpl/bootstrap.php)
+; template to include, default is "bootstrap" (tpl/bootstrap.php)
 template = "bootstrap-dark"
 
 ; (optional) info text to display
