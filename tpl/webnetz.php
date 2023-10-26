@@ -137,156 +137,280 @@ if (count($class)) {
 </div>
 <?php
 if ($QRCODE) :
-	?>
-	<div id="qrcodemodal" tabindex="-1" class="modal fade" aria-labelledby="qrcodemodalTitle" role="dialog"
-		 aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-body">
-					<div class="mx-auto" id="qrcode-display"></div>
-				</div>
-				<div class="row">
-					<div class="btn-group col-xs-12">
+?>
+<div id="qrcodemodal" tabindex="-1" class="modal fade" aria-labelledby="qrcodemodalTitle" role="dialog"
+	 aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="mx-auto" id="qrcode-display"></div>
+			</div>
+			<div class="row">
+				<div class="btn-group col-xs-12">
 							<span class="col-xs-12">
 								<button type="button" class="btn btn-primary btn-block"
 										data-dismiss="modal"><?php echo I18n::_('Close') ?></button>
 							</span>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 <?php
 endif;
 if ($EMAIL) :
-	?>
-	<div id="emailconfirmmodal" tabindex="-1" class="modal fade" aria-labelledby="emailconfirmmodalTitle" role="dialog"
-		 aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-body">
-					<div id="emailconfirm-display"></div>
-				</div>
-				<div class="row">
-					<div class="btn-group col-xs-12" data-toggle="buttons">
+?>
+<div id="emailconfirmmodal" tabindex="-1" class="modal fade" aria-labelledby="emailconfirmmodalTitle" role="dialog"
+	 aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div id="emailconfirm-display"></div>
+			</div>
+			<div class="row">
+				<div class="btn-group col-xs-12" data-toggle="buttons">
 							<span class="col-xs-12 col-md-4">
 								<button id="emailconfirm-timezone-current" type="button"
 										class="btn btn-danger btn-block"
 										data-dismiss="modal"><?php echo I18n::_('Use Current Timezone') ?></button>
 							</span>
-						<span class="col-xs-12 col-md-4">
+					<span class="col-xs-12 col-md-4">
 								<button id="emailconfirm-timezone-utc" type="button" class="btn btn-default btn-block"
 										data-dismiss="modal"><?php echo I18n::_('Convert To UTC') ?></button>
 							</span>
-						<span class="col-xs-12 col-md-4">
+					<span class="col-xs-12 col-md-4">
 								<button type="button" class="btn btn-primary btn-block"
 										data-dismiss="modal"><?php echo I18n::_('Close') ?></button>
 							</span>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 <?php
 endif;
 ?>
 <nav
 	class="navbar navbar-inverse-static-top">
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-					aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only"><?php echo I18n::_('Toggle navigation'); ?></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="reloadlink navbar-brand" href="">
-				<img alt="<?php echo I18n::_($NAME); ?>" src="img/icon.svg" width="38"/>
-			</a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li id="loadingindicator" class="navbar-text hidden">
-					<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-					<?php echo I18n::_('Loading…'), PHP_EOL; ?>
-				</li>
-				<li>
-					<button id="retrybutton" type="button"
-							class="reloadlink hidden btn btn-warning navbar-btn">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+				aria-expanded="false" aria-controls="navbar">
+			<span class="sr-only"><?php echo I18n::_('Toggle navigation'); ?></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="reloadlink navbar-brand" href="">
+			<img alt="<?php echo I18n::_($NAME); ?>" src="img/icon.svg" width="38"/>
+		</a>
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li id="loadingindicator" class="navbar-text hidden">
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+				<?php echo I18n::_('Loading…'), PHP_EOL; ?>
+			</li>
+			<li>
+				<button id="retrybutton" type="button"
+						class="reloadlink hidden btn btn-warning navbar-btn">
 						<span class="glyphicon glyphicon-repeat"
 							  aria-hidden="true"></span> <?php echo I18n::_('Retry'), PHP_EOL; ?>
-					</button>
-				</li>
-				<li>
+				</button>
+			</li>
+			<li>
 
-						<button id="newbutton" type="button"
-								class="hidden btn btn-warning navbar-btn">
+				<button id="newbutton" type="button"
+						class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon-file"
-								  aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL;							?>
-						</button>
-						<button id="clonebutton" type="button"
-								class="hidden btn btn-warning navbar-btn">
+								  aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL; ?>
+				</button>
+				<button id="clonebutton" type="button"
+						class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon-duplicate"
 								  aria-hidden="true"></span> <?php echo I18n::_('Clone'), PHP_EOL; ?>
-						</button>
-						<button id="rawtextbutton" type="button"
-								class="hidden btn btn-warning navbar-btn">
+				</button>
+				<button id="rawtextbutton" type="button"
+						class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon-text-background"
 								  aria-hidden="true"></span> <?php echo I18n::_('Raw text'), PHP_EOL; ?>
-						</button>
-						<button id="downloadtextbutton" type="button"
-								class="hidden btn btn-warning navbar-btn">
+				</button>
+				<button id="downloadtextbutton" type="button"
+						class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon glyphicon-download-alt"
 								  aria-hidden="true"></span> <?php echo I18n::_('Save paste'), PHP_EOL; ?>
-						</button>
-						<?php
-						if ($EMAIL) :
-							?>
+				</button>
+				<?php
+				if ($EMAIL) :
+					?>
 
-							<button id="emaillink" type="button"
-									class="hidden btn btn-warning navbar-btn">
+					<button id="emaillink" type="button"
+							class="hidden btn btn-warning navbar-btn">
 								<span class="glyphicon glyphicon-envelope"
 									  aria-hidden="true"></span> <?php echo I18n::_('Email'), PHP_EOL; ?>
-							</button>
-						<?php
-						endif;
-						if ($QRCODE) :
-							?>
-							<button id="qrcodelink" type="button" data-toggle="modal" data-target="#qrcodemodal"
-									class="hidden btn btn-warning navbar-btn">
+					</button>
+				<?php
+				endif;
+				if ($QRCODE) :
+					?>
+					<button id="qrcodelink" type="button" data-toggle="modal" data-target="#qrcodemodal"
+							class="hidden btn btn-warning navbar-btn">
 								<span class="glyphicon glyphicon-qrcode"
 									  aria-hidden="true"></span> <?php echo I18n::_('QR code'), PHP_EOL; ?>
-							</button>
-						<?php
+					</button>
+				<?php
+				endif;
+				?>
+			</li>
+			<li class="dropdown">
+				<select id="pasteExpiration" name="pasteExpiration" class="hidden">
+					<?php
+					foreach ($EXPIRE as $key => $value) :
+						?>
+						<option value="<?php echo $key; ?>"<?php
+						if ($key == $EXPIREDEFAULT) :
+							?> selected="selected"<?php
 						endif;
+						?>><?php echo $value; ?></option>
+					<?php
+					endforeach;
+					?>
+				</select>
+				<a id="expiration" href="#" class="hidden dropdown-toggle" data-toggle="dropdown" role="button"
+				   aria-haspopup="true" aria-expanded="false"><?php echo I18n::_('Expires'); ?>: <span
+						id="pasteExpirationDisplay"><?php echo $EXPIRE[$EXPIREDEFAULT]; ?></span> <span
+						class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<?php
+					foreach ($EXPIRE as $key => $value) :
 						?>
-				</li>
-				<li class="dropdown">
-					<select id="pasteExpiration" name="pasteExpiration" class="hidden">
-						<?php
-						foreach ($EXPIRE as $key => $value) :
-							?>
-							<option value="<?php echo $key; ?>"<?php
-							if ($key == $EXPIREDEFAULT) :
-								?> selected="selected"<?php
-							endif;
-							?>><?php echo $value; ?></option>
-						<?php
-						endforeach;
+						<li>
+							<a href="#" data-expiration="<?php echo $key; ?>">
+								<?php echo $value, PHP_EOL; ?>
+							</a>
+						</li>
+					<?php
+					endforeach;
+					?>
+				</ul>
+			</li>
+
+			<li>
+				<div id="burnafterreadingoption" class="navbar-text checkbox hidden">
+					<label>
+						<input type="checkbox" id="burnafterreading" name="burnafterreading"<?php
+						if ($BURNAFTERREADINGSELECTED) :
+							?> checked="checked"<?php
+						endif;
+						?> />
+						<?php echo I18n::_('Burn after reading'), PHP_EOL; ?>
+					</label>
+				</div>
+			</li>
+			<?php
+			if ($DISCUSSION) :
+			?>
+			<li>
+				<div id="opendiscussionoption" class="navbar-text checkbox hidden">
+					<label>
+						<input type="checkbox" id="opendiscussion" name="opendiscussion"<?php
+						if ($OPENDISCUSSION) :
+							?> checked="checked"<?php
+						endif;
+						?> />
+						<?php echo I18n::_('Open discussion'), PHP_EOL; ?>
+					</label>
+				</div>
+			</li>
+			<?php
+			endif;
+			endif;
+			if ($PASSWORD) :
+			?>
+			<li>
+				<div id="password" class="navbar-form hidden">
+					<input type="password" id="passwordinput"
+						   placeholder="<?php echo I18n::_('Password (recommended)'); ?>" class="form-control"
+						   size="23"/>
+				</div>
+			</li>
+			<?php
+			endif;
+			if ($FILEUPLOAD) :
+			?>
+			<li id="attach" class="hidden dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+				   aria-expanded="false"><?php echo I18n::_('Attach a file'); ?> <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li id="filewrap">
+						<div>
+							<input type="file" id="file" name="file"/>
+						</div>
+						<div id="dragAndDropFileName"
+							 class="dragAndDropFile"><?php echo I18n::_('alternatively drag & drop a file or paste an image from the clipboard'); ?></div>
+					</li>
+					<li id="customattachment" class="hidden"></li>
+					<li>
+						<a id="fileremovebutton" href="#">
+							<?php echo I18n::_('Remove attachment'), PHP_EOL; ?>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<?php
+			endif; ?>
+			<li class="dropdown">
+				<select id="pasteFormatter" name="pasteFormatter" class="hidden">
+					<?php
+					foreach ($FORMATTER as $key => $value) :
 						?>
-					</select>
-					<a id="expiration" href="#" class="hidden dropdown-toggle" data-toggle="dropdown" role="button"
-					   aria-haspopup="true" aria-expanded="false"><?php echo I18n::_('Expires'); ?>: <span
-							id="pasteExpirationDisplay"><?php echo $EXPIRE[$EXPIREDEFAULT]; ?></span> <span
-							class="caret"></span></a>
-					<ul class="dropdown-menu">
+						<option value="<?php echo $key; ?>"<?php
+						if ($key == $FORMATTERDEFAULT) :
+							?> selected="selected"<?php
+						endif;
+						?>><?php echo $value; ?></option>
+					<?php
+					endforeach;
+					?>
+				</select>
+				<a id="formatter" href="#" class="hidden dropdown-toggle" data-toggle="dropdown" role="button"
+				   aria-haspopup="true" aria-expanded="false"><?php echo I18n::_('Format'); ?>: <span
+						id="pasteFormatterDisplay"><?php echo $FORMATTER[$FORMATTERDEFAULT]; ?></span> <span
+						class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<?php
+					foreach ($FORMATTER as $key => $value) :
+						?>
+						<li>
+							<a href="#" data-format="<?php echo $key; ?>">
+								<?php echo $value, PHP_EOL; ?>
+							</a>
+						</li>
+					<?php
+					endforeach;
+					?>
+				</ul>
+			</li>
+			<?php
+			endif;
+			?>
+		</ul>
+		<ul class="nav navbar-nav pull-right">
+			<?php
+			if (strlen($LANGUAGESELECTION)) :
+				?>
+				<li id="language" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+					   aria-expanded="false"><span class="glyphicon glyphicon-flag"
+												   aria-hidden="true"></span> <?php echo $LANGUAGES[$LANGUAGESELECTION][0]; ?>
+						<span class="caret"></span></a>
+					<ul class="dropdown-menu dropdown-menu-right">
 						<?php
-						foreach ($EXPIRE as $key => $value) :
+						foreach ($LANGUAGES as $key => $value) :
 							?>
 							<li>
-								<a href="#" data-expiration="<?php echo $key; ?>">
-									<?php echo $value, PHP_EOL; ?>
+								<a href="#" data-lang="<?php echo $key; ?>">
+									<?php echo $value[0]; ?> (<?php echo $value[1]; ?>)
 								</a>
 							</li>
 						<?php
@@ -294,212 +418,12 @@ endif;
 						?>
 					</ul>
 				</li>
-				<?php
-				if ($isCpct) :
-					?>
-					<li class="dropdown">
-						<a id="formatter" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-						   aria-haspopup="true" aria-expanded="false"><?php echo I18n::_('Options'); ?> <span
-								class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li id="burnafterreadingoption" class="checkbox hidden">
-								<label>
-									<input type="checkbox" id="burnafterreading" name="burnafterreading"<?php
-									if ($BURNAFTERREADINGSELECTED) :
-										?> checked="checked"<?php
-									endif;
-									?> />
-									<?php echo I18n::_('Burn after reading'), PHP_EOL; ?>
-								</label>
-							</li>
-							<?php
-							if ($DISCUSSION) :
-								?>
-								<li id="opendiscussionoption" class="checkbox hidden">
-									<label>
-										<input type="checkbox" id="opendiscussion" name="opendiscussion"<?php
-										if ($OPENDISCUSSION) :
-											?> checked="checked"<?php
-										endif;
-										?> />
-										<?php echo I18n::_('Open discussion'), PHP_EOL; ?>
-									</label>
-								</li>
-							<?php
-							endif;
-							?>
-							<li role="separator" class="divider"></li>
-							<li>
-								<div>
-									<?php echo I18n::_('Format'); ?>: <span
-										id="pasteFormatterDisplay"><?php echo $FORMATTER[$FORMATTERDEFAULT]; ?></span>
-									<span class="caret"></span>
-								</div>
-							</li>
-							<?php
-							foreach ($FORMATTER as $key => $value) :
-								?>
-								<li>
-									<a href="#" data-format="<?php echo $key; ?>">
-										<?php echo $value, PHP_EOL; ?>
-									</a>
-								</li>
-							<?php
-							endforeach;
-							?>
-						</ul>
-						<select id="pasteFormatter" name="pasteFormatter" class="hidden">
-							<?php
-							foreach ($FORMATTER as $key => $value) :
-								?>
-								<option value="<?php echo $key; ?>"<?php
-								if ($key == $FORMATTERDEFAULT) :
-									?> selected="selected"<?php
-								endif;
-								?>><?php echo $value; ?></option>
-							<?php
-							endforeach;
-							?>
-						</select>
-					</li>
-				<?php
-				else :
-					?>
-					<li>
-						<div id="burnafterreadingoption" class="navbar-text checkbox hidden">
-							<label>
-								<input type="checkbox" id="burnafterreading" name="burnafterreading"<?php
-								if ($BURNAFTERREADINGSELECTED) :
-									?> checked="checked"<?php
-								endif;
-								?> />
-								<?php echo I18n::_('Burn after reading'), PHP_EOL; ?>
-							</label>
-						</div>
-					</li>
-					<?php
-					if ($DISCUSSION) :
-						?>
-						<li>
-							<div id="opendiscussionoption" class="navbar-text checkbox hidden">
-								<label>
-									<input type="checkbox" id="opendiscussion" name="opendiscussion"<?php
-									if ($OPENDISCUSSION) :
-										?> checked="checked"<?php
-									endif;
-									?> />
-									<?php echo I18n::_('Open discussion'), PHP_EOL; ?>
-								</label>
-							</div>
-						</li>
-					<?php
-					endif;
-				endif;
-				if ($PASSWORD) :
-					?>
-					<li>
-						<div id="password" class="navbar-form hidden">
-							<input type="password" id="passwordinput"
-								   placeholder="<?php echo I18n::_('Password (recommended)'); ?>" class="form-control"
-								   size="23"/>
-						</div>
-					</li>
-				<?php
-				endif;
-				if ($FILEUPLOAD) :
-					?>
-					<li id="attach" class="hidden dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="false"><?php echo I18n::_('Attach a file'); ?> <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li id="filewrap">
-								<div>
-									<input type="file" id="file" name="file"/>
-								</div>
-								<div id="dragAndDropFileName"
-									 class="dragAndDropFile"><?php echo I18n::_('alternatively drag & drop a file or paste an image from the clipboard'); ?></div>
-							</li>
-							<li id="customattachment" class="hidden"></li>
-							<li>
-								<a id="fileremovebutton" href="#">
-									<?php echo I18n::_('Remove attachment'), PHP_EOL; ?>
-								</a>
-							</li>
-						</ul>
-					</li>
-				<?php
-				endif;
-				if (!$isCpct) :
-					?>
-					<li class="dropdown">
-						<select id="pasteFormatter" name="pasteFormatter" class="hidden">
-							<?php
-							foreach ($FORMATTER as $key => $value) :
-								?>
-								<option value="<?php echo $key; ?>"<?php
-								if ($key == $FORMATTERDEFAULT) :
-									?> selected="selected"<?php
-								endif;
-								?>><?php echo $value; ?></option>
-							<?php
-							endforeach;
-							?>
-						</select>
-						<a id="formatter" href="#" class="hidden dropdown-toggle" data-toggle="dropdown" role="button"
-						   aria-haspopup="true" aria-expanded="false"><?php echo I18n::_('Format'); ?>: <span
-								id="pasteFormatterDisplay"><?php echo $FORMATTER[$FORMATTERDEFAULT]; ?></span> <span
-								class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<?php
-							foreach ($FORMATTER as $key => $value) :
-								?>
-								<li>
-									<a href="#" data-format="<?php echo $key; ?>">
-										<?php echo $value, PHP_EOL; ?>
-									</a>
-								</li>
-							<?php
-							endforeach;
-							?>
-						</ul>
-					</li>
-				<?php
-				endif;
-				?>
-			</ul>
-			<ul class="nav navbar-nav pull-right">
-				<?php
-				if (strlen($LANGUAGESELECTION)) :
-					?>
-					<li id="language" class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-						   aria-expanded="false"><span class="glyphicon glyphicon-flag"
-													   aria-hidden="true"></span> <?php echo $LANGUAGES[$LANGUAGESELECTION][0]; ?>
-							<span class="caret"></span></a>
-						<ul class="dropdown-menu dropdown-menu-right">
-							<?php
-							foreach ($LANGUAGES as $key => $value) :
-								?>
-								<li>
-									<a href="#" data-lang="<?php echo $key; ?>">
-										<?php echo $value[0]; ?> (<?php echo $value[1]; ?>)
-									</a>
-								</li>
-							<?php
-							endforeach;
-							?>
-						</ul>
-					</li>
-				<?php
-				endif;
-				?>
-			</ul>
-		</div>
-		<?php
-		if ($isCpct) :
-		?></div><?php
-endif;
-?></nav>
+			<?php
+			endif;
+			?>
+		</ul>
+	</div>
+</nav>
 <main>
 	<section class="container">
 		<?php
@@ -534,7 +458,7 @@ endif;
 			<?php echo I18n::encode($ERROR), PHP_EOL; ?>
 		</div>
 		<noscript>
-			<div id="noscript" role="alert" class="alert alert-<?php echo $isDark ? 'error' : 'warning'; ?>">
+			<div id="noscript" role="alert" class="alert alert-error">
 				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 				<?php echo I18n::_('JavaScript is required for %s to work. Sorry for the inconvenience.', I18n::_($NAME)), PHP_EOL; ?>
 			</div>
@@ -576,7 +500,7 @@ endif;
 				?>
 				<p>
 					<button id="shortenbutton" data-shortener="<?php echo I18n::encode($URLSHORTENER); ?>" type="button"
-							class="btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?> btn-block">
+							class="btn btn-warning btn-block">
 						<span class="glyphicon glyphicon-send"
 							  aria-hidden="true"></span> <?php echo I18n::_('Shorten URL'), PHP_EOL; ?>
 					</button>
@@ -600,13 +524,13 @@ endif;
 				if ($isPage) :
 				?>
 				<button id="newbutton" type="button"
-						class="reloadlink hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?>">
+						class="reloadlink hidden btn btn-warning">
 					<span class="glyphicon glyphicon-file"
 						  aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL;
 					else :
 					?>
 					<button id="sendbutton" type="button"
-							class="hidden btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?>">
+							class="hidden btn btn-warning">
 						<span class="glyphicon glyphicon-upload"
 							  aria-hidden="true"></span> <?php echo I18n::_('Send'), PHP_EOL;
 						endif;
@@ -660,36 +584,36 @@ endif;
 </main>
 <?php
 if ($DISCUSSION) :
-	?>
-	<div id="serverdata" class="hidden" aria-hidden="true">
-		<div id="templates">
-			<article id="commenttemplate" class="comment">
-				<div class="commentmeta"><span class="nickname">name</span><span class="commentdate">0000-00-00</span>
-				</div>
-				<div class="commentdata">c</div>
-				<button class="btn btn-default btn-sm"><?php echo I18n::_('Reply'); ?></button>
-			</article>
-			<p id="commenttailtemplate" class="comment">
-				<button class="btn btn-default btn-sm"><?php echo I18n::_('Add comment'); ?></button>
-			</p>
-			<div id="replytemplate" class="reply hidden"><input type="text" id="nickname" class="form-control"
-																title="<?php echo I18n::_('Optional nickname…'); ?>"
-																placeholder="<?php echo I18n::_('Optional nickname…'); ?>"/><textarea
-					id="replymessage" class="replymessage form-control" cols="80" rows="7"></textarea><br/>
-				<div id="replystatus" role="alert" class="statusmessage hidden alert"><span class="glyphicon"
-																							aria-hidden="true"></span>
-				</div>
-				<button id="replybutton" class="btn btn-default btn-sm"><?php echo I18n::_('Post comment'); ?></button>
+?>
+<div id="serverdata" class="hidden" aria-hidden="true">
+	<div id="templates">
+		<article id="commenttemplate" class="comment">
+			<div class="commentmeta"><span class="nickname">name</span><span class="commentdate">0000-00-00</span>
 			</div>
+			<div class="commentdata">c</div>
+			<button class="btn btn-default btn-sm"><?php echo I18n::_('Reply'); ?></button>
+		</article>
+		<p id="commenttailtemplate" class="comment">
+			<button class="btn btn-default btn-sm"><?php echo I18n::_('Add comment'); ?></button>
+		</p>
+		<div id="replytemplate" class="reply hidden"><input type="text" id="nickname" class="form-control"
+															title="<?php echo I18n::_('Optional nickname…'); ?>"
+															placeholder="<?php echo I18n::_('Optional nickname…'); ?>"/><textarea
+				id="replymessage" class="replymessage form-control" cols="80" rows="7"></textarea><br/>
+			<div id="replystatus" role="alert" class="statusmessage hidden alert"><span class="glyphicon"
+																						aria-hidden="true"></span>
+			</div>
+			<button id="replybutton" class="btn btn-default btn-sm"><?php echo I18n::_('Post comment'); ?></button>
 		</div>
 	</div>
+</div>
 <?php
 endif;
 ?>
 <?php
 if ($FILEUPLOAD) :
-	?>
-	<div id="dropzone" class="hidden" tabindex="-1" aria-hidden="true"></div>
+?>
+<div id="dropzone" class="hidden" tabindex="-1" aria-hidden="true"></div>
 <?php
 endif;
 ?>
