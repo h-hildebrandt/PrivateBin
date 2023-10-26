@@ -12,49 +12,49 @@ use PrivateBin\I18n;
 		<title><?php echo I18n::_($NAME); ?></title>
 
 		<link type="text/css" rel="stylesheet" href="css/bootstrap/darkstrap-0.9.3.css" />
-		<link type="text/css" rel="stylesheet" href="css/bootstrap/privatebin.css?<?php echo rawurlencode($VERSION); ?>" />
+<!--		<link type="text/css" rel="stylesheet" href="css/bootstrap/privatebin.css?<?php /*echo rawurlencode($VERSION); */?>" />
 <?php
-if ($SYNTAXHIGHLIGHTING) :
-?>
-		<link type="text/css" rel="stylesheet" href="css/prettify/prettify.css?<?php echo rawurlencode($VERSION); ?>" />
+/*if ($SYNTAXHIGHLIGHTING) :
+*/?>
+		<link type="text/css" rel="stylesheet" href="css/prettify/prettify.css?<?php /*echo rawurlencode($VERSION); */?>" />
 <?php
-    if (strlen($SYNTAXHIGHLIGHTINGTHEME)) :
-?>
-		<link type="text/css" rel="stylesheet" href="css/prettify/<?php echo rawurlencode($SYNTAXHIGHLIGHTINGTHEME); ?>.css?<?php echo rawurlencode($VERSION); ?>" />
+/*    if (strlen($SYNTAXHIGHLIGHTINGTHEME)) :
+*/?>
+		<link type="text/css" rel="stylesheet" href="css/prettify/<?php /*echo rawurlencode($SYNTAXHIGHLIGHTINGTHEME); */?>.css?<?php /*echo rawurlencode($VERSION); */?>" />
 <?php
-    endif;
+/*    endif;
 endif;
-?>
+*/?>
 		<noscript><link type="text/css" rel="stylesheet" href="css/noscript.css" /></noscript>
 		<script type="text/javascript" data-cfasync="false" src="js/jquery-3.7.0.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous"></script>
 <?php
-if ($QRCODE) :
-?>
+/*if ($QRCODE) :
+*/?>
 		<script async type="text/javascript" data-cfasync="false" src="js/kjua-0.9.0.js" integrity="sha512-CVn7af+vTMBd9RjoS4QM5fpLFEOtBCoB0zPtaqIDC7sF4F8qgUSRFQQpIyEDGsr6yrjbuOLzdf20tkHHmpaqwQ==" crossorigin="anonymous"></script>
 <?php
-endif;
+/*endif;
 if ($ZEROBINCOMPATIBILITY) :
-?>
+*/?>
 		<script type="text/javascript" data-cfasync="false" src="js/base64-1.7.js" integrity="sha512-JdwsSP3GyHR+jaCkns9CL9NTt4JUJqm/BsODGmYhBcj5EAPKcHYh+OiMfyHbcDLECe17TL0hjXADFkusAqiYgA==" crossorigin="anonymous"></script>
 <?php
-endif;
-?>
+/*endif;
+*/?>
 		<script type="text/javascript" data-cfasync="false" src="js/zlib-1.2.13.js" integrity="sha512-Lv4PCbSge8B4odE2blatgggJ/mkX1Ak21e7jL8mY3vzrVHS8FGsrEoqCrizxIJB4sW3T2w5Q+RG7hhUvp7+9tw==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/base-x-4.0.0.js" integrity="sha512-nNPg5IGCwwrveZ8cA/yMGr5HiRS5Ps2H+s0J/mKTPjCPWUgFGGw7M5nqdnPD3VsRwCVysUh3Y8OWjeSKGkEQJQ==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/rawinflate-0.3.js" integrity="sha512-g8uelGgJW9A/Z1tB6Izxab++oj5kdD7B4qC7DHwZkB6DGMXKyzx7v5mvap2HXueI2IIn08YlRYM56jwWdm2ucQ==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/bootstrap-3.4.1.js" integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg==" crossorigin="anonymous"></script>
 <?php
-if ($SYNTAXHIGHLIGHTING) :
-?>
-		<script type="text/javascript" data-cfasync="false" src="js/prettify.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-puO0Ogy++IoA2Pb9IjSxV1n4+kQkKXYAEUtVzfZpQepyDPyXk8hokiYDS7ybMogYlyyEIwMLpZqVhCkARQWLMg==" crossorigin="anonymous"></script>
+/*if ($SYNTAXHIGHLIGHTING) :
+*/?>
+		<script type="text/javascript" data-cfasync="false" src="js/prettify.js?<?php /*echo rawurlencode($VERSION); */?>" integrity="sha512-puO0Ogy++IoA2Pb9IjSxV1n4+kQkKXYAEUtVzfZpQepyDPyXk8hokiYDS7ybMogYlyyEIwMLpZqVhCkARQWLMg==" crossorigin="anonymous"></script>
 <?php
-endif;
+/*endif;
 if ($MARKDOWN) :
-?>
+*/?>
 		<script type="text/javascript" data-cfasync="false" src="js/showdown-2.1.0.js" integrity="sha512-WYXZgkTR0u/Y9SVIA4nTTOih0kXMEd8RRV6MLFdL6YU8ymhR528NLlYQt1nlJQbYz4EW+ZsS0fx1awhiQJme1Q==" crossorigin="anonymous"></script>
-<?php
-endif;
-?>
+--><?php
+/*endif;
+*/?>
 		<script type="text/javascript" data-cfasync="false" src="js/purify-3.0.4.js" integrity="sha512-N7H+3ylaOUeKuTX57cZoa42hqaG5w1rchG/IP9+BHd48W/vESgPDpb5QuDqzJE1dZhrGVCQgU8peIQGHmdGFhQ==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/legacy.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-LYos+qXHIRqFf5ZPNphvtTB0cgzHUizu2wwcOwcwz/VIpRv9lpcBgPYz4uq6jx0INwCAj6Fbnl5HoKiLufS2jg==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-ykPMZuZDmyGNik7G5dIeqE/+CJ79OKZ0XzPPVWUwAzp+k8PQoP66J8F8zYtI53dM4ITLojkNKrv4vTv6E3bzFQ==" crossorigin="anonymous"></script>
