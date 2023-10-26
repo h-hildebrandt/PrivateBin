@@ -1,8 +1,5 @@
 <?php
 use PrivateBin\I18n;
-$isCpct = substr($template, 9, 8) === '-compact';
-$isDark = substr($template, 9, 5) === '-dark';
-$isPage = substr($template, -5) === '-page';
 ?><!DOCTYPE html>
 <html lang="<?php echo I18n::getLanguage(); ?>"<?php echo I18n::isRtl() ? ' dir="rtl"' : ''; ?>>
 	<head>
@@ -13,21 +10,8 @@ $isPage = substr($template, -5) === '-page';
 		<meta name="robots" content="noindex" />
 		<meta name="google" content="notranslate">
 		<title><?php echo I18n::_($NAME); ?></title>
-<?php
-if (!$isDark) :
-?>
-		<link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-3.4.1.css" />
-<?php
-endif;
-?>
-		<link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap-theme-3.4.1.css" />
-<?php
-if ($isDark) :
-?>
+
 		<link type="text/css" rel="stylesheet" href="css/bootstrap/darkstrap-0.9.3.css" />
-<?php
-endif;
-?>
 		<link type="text/css" rel="stylesheet" href="css/bootstrap/privatebin.css?<?php echo rawurlencode($VERSION); ?>" />
 <?php
 if ($SYNTAXHIGHLIGHTING) :
