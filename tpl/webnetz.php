@@ -517,20 +517,11 @@ endif;
 			<li role="presentation"><a role="tab" aria-selected="false" aria-controls="editorTabs" id="messagepreview"
 									   href="#"><?php echo I18n::_('Preview'); ?></a></li>
 			<li role="presentation" class="pull-right">
-				<?php
-				if ($isPage) :
-				?>
-				<button id="newbutton" type="button"
-						class="reloadlink hidden btn btn-warning">
-					<span class="glyphicon glyphicon-file"
-						  aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL;
-					else :
-					?>
+
 					<button id="sendbutton" type="button"
 							class="hidden btn btn-warning">
 						<span class="glyphicon glyphicon-upload"
 							  aria-hidden="true"></span> <?php echo I18n::_('Send'), PHP_EOL;
-						endif;
 						?>
 					</button>
 			</li>
