@@ -86,11 +86,11 @@ use PrivateBin\I18n;
 			crossorigin="anonymous"></script>
 	<!-- icon -->
 	<link rel="apple-touch-icon" href="<?php echo I18n::encode($BASEPATH); ?>img/apple-touch-icon.png" sizes="180x180"/>
-	<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32"/>
-	<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16"/>
+	<link rel="icon" type="image/png" href="img/webnetz-logo-32x32.png" sizes="32x32"/>
+	<link rel="icon" type="image/png" href="img/webnetz-logo-16x16.png" sizes="16x16"/>
 	<link rel="manifest" href="manifest.json?<?php echo rawurlencode($VERSION); ?>"/>
 	<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#ffcc00"/>
-	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="shortcut icon" href="img/webnetz-logo.ico">
 	<meta name="msapplication-config" content="browserconfig.xml">
 	<meta name="theme-color" content="#ffe57e"/>
 	<!-- Twitter/social media cards -->
@@ -115,7 +115,7 @@ $class[] = 'dark-theme';
 if (count($class)) {
 	echo ' class="', implode(' ', $class), '"';
 }
-?>><h1>TEST</h1>
+?>><h1>Webnetz Passwordtool</h1>
 <div id="passwordmodal" tabindex="-1" class="modal fade" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -202,7 +202,7 @@ endif;
 			<span class="icon-bar"></span>
 		</button>
 		<a class="reloadlink navbar-brand" href="">
-			<img alt="<?php echo I18n::_($NAME); ?>" src="img/icon.svg" width="38"/>
+			<img alt="<?php echo I18n::_($NAME); ?>" src="img/webnetz-logo.png" width="38"/>
 		</a>
 	</div>
 	<div id="navbar" class="navbar-collapse collapse">
