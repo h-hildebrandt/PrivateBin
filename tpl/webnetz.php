@@ -324,7 +324,6 @@ endif;
 			</li>
 			<?php
 			endif;
-			endif;
 			if ($PASSWORD) :
 			?>
 			<li>
@@ -391,9 +390,7 @@ endif;
 					?>
 				</ul>
 			</li>
-			<?php
-			endif;
-			?>
+
 		</ul>
 		<ul class="nav navbar-nav pull-right">
 			<?php
