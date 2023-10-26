@@ -38,7 +38,7 @@ defaultformatter = "plaintext"
 sizelimit = 10485760
 
 ; template to include, default is "bootstrap" (tpl/bootstrap.php)
-template = "bootstrap-webnetz"
+template = "webnetz"
 
 ; (optional) info text to display
 ; use single, instead of double quotes for HTML attributes
