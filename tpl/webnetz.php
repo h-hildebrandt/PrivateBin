@@ -110,12 +110,8 @@ use PrivateBin\I18n;
 </head>
 <body role="document" data-compression="<?php echo rawurlencode($COMPRESSION); ?>"<?php
 $class = array();
-if ($isCpct) {
-	$class[] = 'navbar-spacing';
-}
-if ($isDark) {
-	$class[] = 'dark-theme';
-}
+$class[] = 'dark-theme';
+
 if (count($class)) {
 	echo ' class="', implode(' ', $class), '"';
 }
@@ -195,12 +191,8 @@ if ($EMAIL) :
 endif;
 ?>
 <nav
-	class="navbar navbar-<?php echo $isDark ? 'inverse' : 'default'; ?> navbar-<?php echo $isCpct ? 'fixed' : 'static'; ?>-top"><?php
-	if ($isCpct) :
-	?>
-	<div class="container"><?php
-		endif;
-		?>
+	class="navbar navbar-inverse-static-top">
+
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
 					aria-expanded="false" aria-controls="navbar">
@@ -221,40 +213,30 @@ endif;
 				</li>
 				<li>
 					<button id="retrybutton" type="button"
-							class="reloadlink hidden btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?> navbar-btn">
+							class="reloadlink hidden btn btn-warning navbar-btn">
 						<span class="glyphicon glyphicon-repeat"
 							  aria-hidden="true"></span> <?php echo I18n::_('Retry'), PHP_EOL; ?>
 					</button>
 				</li>
 				<li>
-					<?php
-					if ($isPage) :
-					?>
-					<button id="sendbutton" type="button"
-							class="hidden btn btn-<?php echo $isDark ? 'warning' : 'primary'; ?> navbar-btn">
-						<span class="glyphicon glyphicon-upload"
-							  aria-hidden="true"></span> <?php echo I18n::_('Send'), PHP_EOL;
-						else :
-						?>
+
 						<button id="newbutton" type="button"
-								class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+								class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon-file"
-								  aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL;
-							endif;
-							?>
+								  aria-hidden="true"></span> <?php echo I18n::_('New'), PHP_EOL;							?>
 						</button>
 						<button id="clonebutton" type="button"
-								class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+								class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon-duplicate"
 								  aria-hidden="true"></span> <?php echo I18n::_('Clone'), PHP_EOL; ?>
 						</button>
 						<button id="rawtextbutton" type="button"
-								class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+								class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon-text-background"
 								  aria-hidden="true"></span> <?php echo I18n::_('Raw text'), PHP_EOL; ?>
 						</button>
 						<button id="downloadtextbutton" type="button"
-								class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+								class="hidden btn btn-warning navbar-btn">
 							<span class="glyphicon glyphicon glyphicon-download-alt"
 								  aria-hidden="true"></span> <?php echo I18n::_('Save paste'), PHP_EOL; ?>
 						</button>
@@ -263,7 +245,7 @@ endif;
 							?>
 
 							<button id="emaillink" type="button"
-									class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+									class="hidden btn btn-warning navbar-btn">
 								<span class="glyphicon glyphicon-envelope"
 									  aria-hidden="true"></span> <?php echo I18n::_('Email'), PHP_EOL; ?>
 							</button>
@@ -272,7 +254,7 @@ endif;
 						if ($QRCODE) :
 							?>
 							<button id="qrcodelink" type="button" data-toggle="modal" data-target="#qrcodemodal"
-									class="hidden btn btn-<?php echo $isDark ? 'warning' : 'default'; ?> navbar-btn">
+									class="hidden btn btn-warning navbar-btn">
 								<span class="glyphicon glyphicon-qrcode"
 									  aria-hidden="true"></span> <?php echo I18n::_('QR code'), PHP_EOL; ?>
 							</button>
